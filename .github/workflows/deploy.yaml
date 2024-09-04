@@ -19,6 +19,5 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run-script lint:fix
       - run: npm run build-if-present
-      # - run: npm test
+      - run: npm test
