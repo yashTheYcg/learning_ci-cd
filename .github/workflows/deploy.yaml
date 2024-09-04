@@ -1,0 +1,26 @@
+name: CI/CD for Nodejs app
+
+on:
+  push:
+    branches: [main]
+  pull_requests:
+    branches: [main]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+       uses: actions/setup-node@v3
+       with:
+        node-version: 20
+
+      - name: Install dependencies
+      - run: npm ci
+      - run: npm run-script lint:fix
+      - run: npm run build-if-present
+      # - run: npm test
