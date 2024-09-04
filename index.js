@@ -29,6 +29,6 @@ app.get('/',(req,res)=> {
     return res.sendFile(filePath);
 })
 
-// let a=2;
+let a=2;
 
 server.listen(9000,()=> console.log("server started at port: 9000"));
